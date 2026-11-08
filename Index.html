@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENTIA - Inteligencia Artificial para PYMES</title>
+    <!-- Tailwind CSS (Vía CDN para prototipado rápido) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos base personalizados */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .view-section { display: none; }
+        .view-section.active { display: block; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                    <i class="fa-solid fa-robot text-blue-600 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight">AGENTIA</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button onclick="navigateTo('home')" class="hover:text-blue-600 font-semibold">Inicio</button>
+                    <button onclick="navigateTo('planes')" class="hover:text-blue-600 font-semibold">Planes</button>
+                    <button onclick="navigateTo('soporte')" class="hover:text-blue-600 font-semibold">Soporte</button>
+                    <button onclick="navigateTo('login')" class="text-blue-600 font-bold border border-blue-600 px-4 py-1 rounded hover:bg-blue-50">Ingresar</button>
+                    <button onclick="navigateTo('dashboard')" class="bg-blue-600 text-white font-bold px-4 py-1 rounded hover:bg-blue-700">Mi Panel</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. VISTA: LANDING PAGE -->
+    <div id="home" class="view-section active">
+        <!-- Hero Section -->
+        <div class="bg-blue-600 text-white py-20 text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Automatiza tu inventario y ventas con IA</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Deja que nuestros agentes atiendan a tus clientes y gestionen tu bodega, mientras tú mantienes el control total con un solo clic.</p>
+            <button onclick="navigateTo('planes')" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-slate-100 transition">Ver Planes y Precios</button>
+        </div>
+        
+        <!-- Vista Previa de Agentes (Simulador) -->
+        <div class="max-w-5xl mx-auto py-16 px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Conoce a tus nuevos empleados virtuales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                    <div class="flex items-center border-b pb-3 mb-3">
+                        <i class="fa-brands fa-whatsapp text-green-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold">Agente Vendedor (Demo)</h3>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="bg-slate-100 p-3 rounded-lg w-3/4">¿Tienen disponibles los audífonos inalámbricos negros?</div>
+                        <div class="bg-green-100 p-3 rounded-lg w-3/4 ml-auto text-right">¡Hola! Sí, tenemos 15 unidades en bodega. Cuestan $450 MXN. ¿Te genero el enlace de pago? 🤖</div>
+                        <div class="bg-slate-100 p-3 rounded-lg w-3/4">Sí por favor.</div>
+                        <div class="bg-yellow-100 p-3 rounded-lg border border-yellow-300 text-center font-semibold text-xs text-yellow-800">
+                            Esperando autorización del administrador para enviar link de cobro...
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Control "Human-in-the-loop"</h3>
+                    <p class="mb-4 text-slate-600">Nuestros agentes hacen el trabajo pesado, pero tú tienes la última palabra. Ningún pago se procesa ni ninguna mercancía se pide a proveedores sin tu confirmación explícita.</p>
+                    <ul class="space-y-2 text-slate-700">
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Conectado a tu WhatsApp e Instagram.</li>
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Lee tu inventario en tiempo real.</li>
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Predice qué productos se van a agotar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. VISTA: PLANES Y PRECIOS -->
+    <div id="planes" class="view-section bg-slate-50 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Elige el plan ideal para tu negocio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan Emprendedor -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800">Plan Emprendedor</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$499 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-slate-600 mb-6">Para arrancar y no perder mensajes.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Agente Vendedor Omnicanal</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Validación humana de cierres</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Respuestas 24/7</li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200">Contratar</button>
+                </div>
+                <!-- Plan Negocio -->
+                <div class="bg-white rounded-lg shadow-xl p-8 border-2 border-blue-600 relative transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MÁS POPULAR</div>
+                    <h3 class="text-xl font-bold text-slate-800">Plan Negocio</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$999 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-slate-600 mb-6">Optimiza bodega y retén ventas.</p>
+                    <ul class="space-y-3 mb-8 font-semibold">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Todo lo del plan anterior</li>
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Agente Predictivo de Abastecimiento</li>
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Agente Lista de Espera</li>
+                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Promotor de Inv. Estancado</li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700">Contratar</button>
+                </div>
+                <!-- Plan Corporativo -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800">Plan Corporativo</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$1,999 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-slate-600 mb-6">Automatización logística total.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Todo el ecosistema AGENTIA</li>
+                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Gestor de Proveedores (Cotizador)</li>
+                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Detector de Mermas/Conciliación</li>
+                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Analista de Tendencias Locales</li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VISTA: LOGIN / REGISTRO Y CHECKOUT (Simplificado) -->
+    <div id="login" class="view-section py-16 px-4">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Accede a tu cuenta</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Correo Electrónico</label>
+                    <input type="email" class="w-full border rounded p-2 focus:outline-none focus:border-blue-500" placeholder="tu@empresa.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Contraseña</label>
+                    <input type="password" class="w-full border rounded p-2 focus:outline-none focus:border-blue-500" placeholder="••••••••">
+                </div>
+                <button onclick="navigateTo('dashboard')" class="w-full bg-slate-800 text-white font-bold py-2 rounded hover:bg-slate-900">Iniciar Sesión</button>
+                <div class="text-center text-sm text-slate-500">¿No tienes cuenta? <a href="#" onclick="navigateTo('checkout')" class="text-blue-600 font-semibold">Regístrate aquí</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vista oculta para "Checkout" -->
+    <div id="checkout" class="view-section py-16 px-4">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md border-t-8 border-blue-600">
+            <h2 class="text-2xl font-bold mb-2">Completar Suscripción</h2>
+            <p class="text-slate-600 mb-6">Estás a un paso de automatizar tu negocio.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-semibold mb-3 border-b pb-2">1. Crea tu cuenta</h3>
+                    <input type="text" placeholder="Nombre de tu negocio" class="w-full border rounded p-2 mb-3">
+                    <input type="email" placeholder="Correo electrónico" class="w-full border rounded p-2 mb-3">
+                    <input type="password" placeholder="Contraseña" class="w-full border rounded p-2 mb-3">
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3 border-b pb-2">2. Método de Pago</h3>
+                    <div class="bg-slate-100 p-4 rounded text-center mb-4 cursor-pointer hover:bg-slate-200">
+                        <i class="fa-regular fa-credit-card text-2xl mb-2 text-slate-700"></i>
+                        <p class="font-semibold text-sm">Tarjeta de Crédito / Débito</p>
+                    </div>
+                    <!-- Simulación de pago seguro -->
+                    <button onclick="alert('Pago procesado con éxito. Redirigiendo a tu Panel Privado...'); navigateTo('dashboard');" class="w-full bg-green-500 text-white font-bold py-3 rounded hover:bg-green-600">Pagar y Activar Agentes</button>
+                    <p class="text-xs text-center text-slate-400 mt-3"><i class="fa-solid fa-lock"></i> Pagos seguros encriptados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. VISTA: SOPORTE Y CONTACTO -->
+    <div id="soporte" class="view-section py-16 px-4">
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md text-center">
+            <i class="fa-solid fa-headset text-5xl text-blue-600 mb-4"></i>
+            <h2 class="text-3xl font-bold mb-4">Centro de Soporte Técnico</h2>
+            <p class="text-slate-600 mb-8 max-w-xl mx-auto">¿Tienes problemas conectando tu catálogo o vinculando WhatsApp? Estamos aquí para ayudarte a configurar tus agentes.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
+                <div class="border p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2"><i class="fa-solid fa-ticket text-blue-600 mr-2"></i> Levantar un Ticket</h3>
+                    <p class="text-sm text-slate-500 mb-4">Escríbenos a soporte@agentia.com o llena el formulario en tu dashboard privado.</p>
+                    <button class="bg-slate-100 border border-slate-300 py-1 px-4 rounded text-sm font-semibold hover:bg-slate-200">Ir a Preguntas Frecuentes</button>
+                </div>
+                <div class="border p-4 rounded bg-blue-50">
+                    <h3 class="font-bold text-lg mb-2"><i class="fa-solid fa-users text-blue-600 mr-2"></i> Equipo Fundador</h3>
+                    <p class="text-sm text-slate-700 mb-4">Atención directa por los creadores del proyecto para garantizar el éxito de tu Pyme:</p>
+                    <ul class="text-xs text-slate-600 font-semibold space-y-1">
+                        <li>• Joan Enrique Aguilar Tun</li>
+                        <li>• José Antonio García Nahuat</li>
+                        <li>• Merced Hernández Soto</li>
+                        <li>• Fernando Aaron Medina Uicab</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. VISTA: PANEL PRIVADO (DASHBOARD - HUMAN-IN-THE-LOOP) -->
+    <div id="dashboard" class="view-section bg-slate-100 min-h-screen">
+        <div class="flex flex-col md:flex-row max-w-7xl mx-auto pt-6">
+            <!-- Menú Lateral del Dashboard -->
+            <div class="w-full md:w-64 bg-white p-4 shadow rounded-lg mb-4 md:mb-0 md:mr-6">
+                <div class="text-center border-b pb-4 mb-4">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-2">M</div>
+                    <h3 class="font-bold">Mi Negocio</h3>
+                    <p class="text-xs text-green-600 font-semibold">Plan Corporativo Activo</p>
+                </div>
+                <ul class="space-y-2">
+                    <li class="p-2 bg-blue-50 text-blue-700 font-bold rounded cursor-pointer"><i class="fa-solid fa-inbox mr-2"></i> Autorizaciones (2)</li>
+                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-boxes-stacked mr-2"></i> Mi Inventario</li>
+                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-chart-line mr-2"></i> Métricas IA</li>
+                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-gear mr-2"></i> Configurar WhatsApp</li>
+                </ul>
+            </div>
+
+            <!-- Contenido Principal: Bandeja de Autorizaciones -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-6">Bandeja de Autorizaciones (Human-in-the-loop)</h2>
+                
+                <!-- Tarjeta de Validación 1: Cierre de Venta -->
+                <div class="bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-yellow-400" id="auth-1">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded">Ventas (WhatsApp)</span>
+                            <h3 class="font-bold text-lg mt-2">Permiso para cobrar mercancía</h3>
+                            <p class="text-slate-600 text-sm mt-1">El Agente Vendedor ha cerrado un acuerdo por "2x Tenis Deportivos". El cliente espera el enlace de pago.</p>
+                            <div class="mt-3 bg-slate-50 p-3 text-sm font-mono rounded border">
+                                <strong>Total a cobrar:</strong> $1,200 MXN<br>
+                                <strong>Stock restante:</strong> 4 unidades
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                        <button onclick="document.getElementById('auth-1').style.display='none'" class="bg-green-500 text-white px-4 py-2 rounded font-bold hover:bg-green-600 shadow"><i class="fa-solid fa-check mr-1"></i> Autorizar y Enviar Link</button>
+                        <button onclick="document.getElementById('auth-1').style.display='none'" class="bg-white border border-red-500 text-red-500 px-4 py-2 rounded font-bold hover:bg-red-50"><i class="fa-solid fa-xmark mr-1"></i> Rechazar</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Validación 2: Proveedores -->
+                <div class="bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-purple-500" id="auth-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded">Gestor de Proveedores</span>
+                            <h3 class="font-bold text-lg mt-2">Quiebre de Stock Previsto</h3>
+                            <p class="text-slate-600 text-sm mt-1">Se prevé que el artículo "Gorras Negras" se agote en 3 días. El Agente redactó una solicitud de cotización para Mayorista ABC.</p>
+                            <div class="mt-3 bg-slate-50 p-3 text-sm italic rounded border text-slate-500">
+                                "Estimado proveedor, solicito cotización actualizada para 50 unidades de..."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                        <button onclick="document.getElementById('auth-2').style.display='none'" class="bg-purple-600 text-white px-4 py-2 rounded font-bold hover:bg-purple-700 shadow"><i class="fa-solid fa-paper-plane mr-1"></i> Aprobar envío de correo</button>
+                        <button onclick="document.getElementById('auth-2').style.display='none'" class="bg-white border border-slate-300 text-slate-600 px-4 py-2 rounded font-bold hover:bg-slate-50"><i class="fa-solid fa-pen mr-1"></i> Editar borrador</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Navegación Simple -->
+    <script>
+        function navigateTo(viewId) {
+            // Oculta todas las vistas
+            const views = document.querySelectorAll('.view-section');
+            views.forEach(view => {
+                view.classList.remove('active');
+            });
+            // Muestra la vista seleccionada
+            document.getElementById(viewId).classList.add('active');
+            // Hacer scroll arriba
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
