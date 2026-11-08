@@ -14,6 +14,14 @@
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         .view-section { display: none; }
         .view-section.active { display: block; }
+        /* Animaciones para las alertas */
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+        .fade-out {
+            animation: fadeOut 0.3s ease forwards;
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -82,44 +90,75 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Elige el plan ideal para tu negocio</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
                 <!-- Plan Emprendedor -->
-                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800">Plan Emprendedor</h3>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-800">Plan Emprendedor (Básico)</h3>
                     <p class="text-4xl font-bold text-blue-600 my-4">$499 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
-                    <p class="text-sm text-slate-600 mb-6">Para arrancar y no perder mensajes.</p>
-                    <ul class="space-y-3 mb-8">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Agente Vendedor Omnicanal</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Validación humana de cierres</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Respuestas 24/7</li>
+                    <p class="text-sm text-slate-600 font-semibold mb-2">Para arrancar y no perder mensajes.</p>
+                    <p class="text-sm text-slate-500 mb-6 italic">Enfocado en resolver el cuello de botella de la atención digital y el catálogo. Atención rápida 24/7 sin perder el control de cobros y envíos.</p>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-3 mt-1"></i> 
+                            <div><strong>Agente Vendedor Omnicanal:</strong> Asistente de WhatsApp/Instagram. Responde dudas, consulta inventario en tiempo real y aparta mercancía con validación humana antes del cierre.</div>
+                        </li>
                     </ul>
-                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200">Contratar</button>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200 mt-auto">Contratar</button>
                 </div>
+
                 <!-- Plan Negocio -->
-                <div class="bg-white rounded-lg shadow-xl p-8 border-2 border-blue-600 relative transform md:-translate-y-4">
+                <div class="bg-white rounded-lg shadow-xl p-8 border-2 border-blue-600 relative transform md:-translate-y-4 flex flex-col h-full">
                     <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MÁS POPULAR</div>
-                    <h3 class="text-xl font-bold text-slate-800">Plan Negocio</h3>
+                    <h3 class="text-xl font-bold text-slate-800">Plan Negocio (Intermedio)</h3>
                     <p class="text-4xl font-bold text-blue-600 my-4">$999 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
-                    <p class="text-sm text-slate-600 mb-6">Optimiza bodega y retén ventas.</p>
-                    <ul class="space-y-3 mb-8 font-semibold">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Todo lo del plan anterior</li>
-                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Agente Predictivo de Abastecimiento</li>
-                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Agente Lista de Espera</li>
-                        <li><i class="fa-solid fa-check text-blue-600 mr-2"></i> Promotor de Inv. Estancado</li>
+                    <p class="text-sm text-slate-600 font-semibold mb-2">Optimiza bodega y retén ventas.</p>
+                    <p class="text-sm text-slate-500 mb-6 italic">Acelera la rotación del inventario y evita que el negocio se quede sin los productos más vendidos.</p>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-3 mt-1"></i> 
+                            <div><strong>Todo lo del Plan Emprendedor.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-blue-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente Predictivo de Abastecimiento:</strong> Analiza historial de ventas y estacionalidad. Envía alertas de quiebre de stock y sugiere reordenar.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-blue-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente de Resurtido (Lista de espera):</strong> Anota clientes por artículos agotados y envía avisos masivos cuando la mercancía ingresa (requiere clic del dueño).</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-blue-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente Promotor de Inv. Estancado:</strong> Monitorea productos de baja rotación y genera promociones (combos, ventas flash) con textos persuasivos listos para publicar.</div>
+                        </li>
                     </ul>
-                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700">Contratar</button>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 mt-auto">Contratar</button>
                 </div>
+
                 <!-- Plan Corporativo -->
-                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800">Plan Corporativo</h3>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-slate-200 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-800">Plan Corporativo (Avanzado)</h3>
                     <p class="text-4xl font-bold text-blue-600 my-4">$1,999 <span class="text-lg text-slate-500 font-normal">MXN/mes</span></p>
-                    <p class="text-sm text-slate-600 mb-6">Automatización logística total.</p>
-                    <ul class="space-y-3 mb-8">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Todo el ecosistema AGENTIA</li>
-                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Gestor de Proveedores (Cotizador)</li>
-                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Detector de Mermas/Conciliación</li>
-                        <li><i class="fa-solid fa-check text-purple-600 mr-2"></i> Analista de Tendencias Locales</li>
+                    <p class="text-sm text-slate-600 font-semibold mb-2">Automatización logística total.</p>
+                    <p class="text-sm text-slate-500 mb-6 italic">La IA hace el trabajo pesado de cruzar datos, cotizar y redactar. El dueño solo autoriza y supervisa.</p>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-3 mt-1"></i> 
+                            <div><strong>Todo lo del Plan Negocio.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-purple-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente Gestor de Proveedores:</strong> Automatiza solicitudes de cotización a mayoristas. (Con Validación Humana).</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-purple-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente Detector de Mermas y Conciliación:</strong> Cruza salidas del sistema con ingresos diarios para detectar discrepancias con un reporte matutino.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-purple-600 mr-3 mt-1"></i> 
+                            <div><strong>Agente Analista de Tendencias:</strong> Analiza patrones de compra y sugiere nuevos productos para futuros pedidos.</div>
+                        </li>
                     </ul>
-                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200">Contratar</button>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-100 text-blue-700 font-bold py-2 rounded hover:bg-blue-200 mt-auto">Contratar</button>
                 </div>
             </div>
         </div>
@@ -199,60 +238,181 @@
 
     <!-- 5. VISTA: PANEL PRIVADO (DASHBOARD - HUMAN-IN-THE-LOOP) -->
     <div id="dashboard" class="view-section bg-slate-100 min-h-screen">
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto pt-6">
+        <div class="flex flex-col md:flex-row max-w-7xl mx-auto pt-6 px-4">
+            
             <!-- Menú Lateral del Dashboard -->
-            <div class="w-full md:w-64 bg-white p-4 shadow rounded-lg mb-4 md:mb-0 md:mr-6">
+            <div class="w-full md:w-64 bg-white p-4 shadow rounded-lg mb-4 md:mb-0 md:mr-6 shrink-0 h-fit">
                 <div class="text-center border-b pb-4 mb-4">
                     <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-2">M</div>
                     <h3 class="font-bold">Mi Negocio</h3>
                     <p class="text-xs text-green-600 font-semibold">Plan Corporativo Activo</p>
                 </div>
                 <ul class="space-y-2">
-                    <li class="p-2 bg-blue-50 text-blue-700 font-bold rounded cursor-pointer"><i class="fa-solid fa-inbox mr-2"></i> Autorizaciones (2)</li>
-                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-boxes-stacked mr-2"></i> Mi Inventario</li>
-                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-chart-line mr-2"></i> Métricas IA</li>
-                    <li class="p-2 hover:bg-slate-50 rounded cursor-pointer"><i class="fa-solid fa-gear mr-2"></i> Configurar WhatsApp</li>
+                    <li onclick="showDashboardSection('autorizaciones')" id="nav-autorizaciones" class="p-2 bg-blue-50 text-blue-700 font-bold rounded cursor-pointer transition-colors"><i class="fa-solid fa-inbox mr-2"></i> <span id="auth-counter-text">Autorizaciones (5)</span></li>
+                    <li onclick="showDashboardSection('inventario')" id="nav-inventario" class="p-2 hover:bg-slate-50 text-slate-700 rounded cursor-pointer transition-colors"><i class="fa-solid fa-boxes-stacked mr-2"></i> Mi Inventario</li>
+                    <li onclick="showDashboardSection('metricas')" id="nav-metricas" class="p-2 hover:bg-slate-50 text-slate-700 rounded cursor-pointer transition-colors"><i class="fa-solid fa-chart-line mr-2"></i> Métricas IA</li>
+                    <li class="p-2 hover:bg-slate-50 text-slate-700 rounded cursor-pointer"><i class="fa-solid fa-gear mr-2"></i> Configurar WhatsApp</li>
                 </ul>
             </div>
 
-            <!-- Contenido Principal: Bandeja de Autorizaciones -->
-            <div class="flex-1">
-                <h2 class="text-2xl font-bold mb-6">Bandeja de Autorizaciones (Human-in-the-loop)</h2>
+            <!-- CONTENEDOR PRINCIPAL DEL DASHBOARD -->
+            <div class="flex-1 pb-10">
                 
-                <!-- Tarjeta de Validación 1: Cierre de Venta -->
-                <div class="bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-yellow-400" id="auth-1">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded">Ventas (WhatsApp)</span>
-                            <h3 class="font-bold text-lg mt-2">Permiso para cobrar mercancía</h3>
-                            <p class="text-slate-600 text-sm mt-1">El Agente Vendedor ha cerrado un acuerdo por "2x Tenis Deportivos". El cliente espera el enlace de pago.</p>
-                            <div class="mt-3 bg-slate-50 p-3 text-sm font-mono rounded border">
-                                <strong>Total a cobrar:</strong> $1,200 MXN<br>
-                                <strong>Stock restante:</strong> 4 unidades
+                <!-- SECCIÓN: BANDEJA DE AUTORIZACIONES -->
+                <div id="panel-autorizaciones" class="dashboard-panel">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Bandeja de Autorizaciones (Human-in-the-loop)</h2>
+                        <span id="badge-counter" class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">5 pendientes</span>
+                    </div>
+
+                    <!-- Mensaje de bandeja vacía (oculto por defecto) -->
+                    <div id="empty-state" class="hidden text-center py-16 bg-white rounded-lg shadow border border-slate-200">
+                        <i class="fa-solid fa-check-circle text-5xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold text-slate-800">¡Todo al día!</h3>
+                        <p class="text-slate-500 mt-2">Has gestionado todas las tareas de los agentes.</p>
+                    </div>
+
+                    <!-- Tarjeta 1: Cierre de Venta (Agente Vendedor) -->
+                    <div class="auth-card bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-yellow-400" id="auth-1">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded">Agente Vendedor Omnicanal</span>
+                                <h3 class="font-bold text-lg mt-2">Permiso para cobrar mercancía</h3>
+                                <p class="text-slate-600 text-sm mt-1">El Agente ha asesorado al cliente "Juan Pérez" y cerrado un acuerdo por "2x Tenis Deportivos". El cliente espera el enlace de pago.</p>
+                                <div class="mt-3 bg-slate-50 p-3 text-sm font-mono rounded border">
+                                    <strong>Total a cobrar:</strong> $1,200 MXN<br>
+                                    <strong>Stock restante tras venta:</strong> 4 unidades
+                                </div>
                             </div>
                         </div>
+                        <div class="mt-4 flex space-x-3">
+                            <button onclick="handleAction('auth-1', 'Link de cobro enviado a Juan Pérez.')" class="bg-green-500 text-white px-4 py-2 rounded font-bold hover:bg-green-600 shadow transition-colors"><i class="fa-solid fa-check mr-1"></i> Autorizar y Enviar Link</button>
+                            <button onclick="handleAction('auth-1', 'Venta cancelada.')" class="bg-white border border-red-500 text-red-500 px-4 py-2 rounded font-bold hover:bg-red-50 transition-colors"><i class="fa-solid fa-xmark mr-1"></i> Rechazar</button>
+                        </div>
                     </div>
-                    <div class="mt-4 flex space-x-3">
-                        <button onclick="document.getElementById('auth-1').style.display='none'" class="bg-green-500 text-white px-4 py-2 rounded font-bold hover:bg-green-600 shadow"><i class="fa-solid fa-check mr-1"></i> Autorizar y Enviar Link</button>
-                        <button onclick="document.getElementById('auth-1').style.display='none'" class="bg-white border border-red-500 text-red-500 px-4 py-2 rounded font-bold hover:bg-red-50"><i class="fa-solid fa-xmark mr-1"></i> Rechazar</button>
+
+                    <!-- Tarjeta 2: Gestor de Proveedores -->
+                    <div class="auth-card bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-purple-500" id="auth-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded">Agente Gestor de Proveedores</span>
+                                <h3 class="font-bold text-lg mt-2">Quiebre de Stock Previsto</h3>
+                                <p class="text-slate-600 text-sm mt-1">Se prevé que el artículo "Gorras Negras" se agote en 3 días. El Agente redactó una solicitud de cotización para Mayorista ABC.</p>
+                                <div class="mt-3 bg-slate-50 p-3 text-sm italic rounded border text-slate-500">
+                                    "Estimado proveedor, solicito cotización actualizada para 50 unidades de Gorras Negras..."
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                            <button onclick="handleAction('auth-2', 'Correo enviado a Mayorista ABC.')" class="bg-purple-600 text-white px-4 py-2 rounded font-bold hover:bg-purple-700 shadow transition-colors"><i class="fa-solid fa-paper-plane mr-1"></i> Aprobar envío de correo</button>
+                            <button onclick="handleAction('auth-2', 'Borrador descartado.')" class="bg-white border border-slate-300 text-slate-600 px-4 py-2 rounded font-bold hover:bg-slate-50 transition-colors"><i class="fa-solid fa-pen mr-1"></i> Descartar</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Agente de Resurtido (Lista de Espera) -->
+                    <div class="auth-card bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-blue-500" id="auth-3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Agente de Resurtido</span>
+                                <h3 class="font-bold text-lg mt-2">Aviso a Lista de Espera</h3>
+                                <p class="text-slate-600 text-sm mt-1">Acaban de ingresar "Playeras Polo" al inventario. Hay 12 clientes en la lista de espera esperando notificación.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                            <button onclick="handleAction('auth-3', 'Mensajes masivos enviados a 12 clientes.')" class="bg-blue-600 text-white px-4 py-2 rounded font-bold hover:bg-blue-700 shadow transition-colors"><i class="fa-solid fa-bullhorn mr-1"></i> Enviar Mensajes a los 12 Clientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4: Promotor de Inventario Estancado -->
+                    <div class="auth-card bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-orange-500" id="auth-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 rounded">Promotor de Inv. Estancado</span>
+                                <h3 class="font-bold text-lg mt-2">Sugerencia de Promoción (Venta Flash)</h3>
+                                <p class="text-slate-600 text-sm mt-1">El artículo "Fundas para iPhone 11" lleva 4 semanas sin venderse. El agente sugiere crear un combo 2x1 y generó el texto para redes sociales.</p>
+                                <div class="mt-3 bg-slate-50 p-3 text-sm rounded border text-slate-700">
+                                    "🔥 ¡Remate Flash! Llévate 2 fundas por el precio de 1. Solo por 24 horas. ¡Manda mensaje para apartar las tuyas!"
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                            <button onclick="handleAction('auth-4', 'Promoción aprobada y copiada al portapapeles.')" class="bg-orange-500 text-white px-4 py-2 rounded font-bold hover:bg-orange-600 shadow transition-colors"><i class="fa-solid fa-check mr-1"></i> Aprobar Promoción</button>
+                            <button onclick="handleAction('auth-4', 'Sugerencia rechazada.')" class="bg-white border border-slate-300 text-slate-600 px-4 py-2 rounded font-bold hover:bg-slate-50 transition-colors">Rechazar</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 5: Detector de Mermas y Conciliación -->
+                    <div class="auth-card bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-red-500" id="auth-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded">Detector de Mermas</span>
+                                <h3 class="font-bold text-lg mt-2">Discrepancia en Inventario vs. Ingresos</h3>
+                                <p class="text-slate-600 text-sm mt-1">Se detectó la salida de 3 unidades de "Mochila Escolar" del sistema, pero los pagos registrados del día de ayer solo cubren 2 unidades.</p>
+                                <div class="mt-3 bg-red-50 p-3 text-sm font-mono rounded border border-red-200">
+                                    <strong>Faltante estimado:</strong> $600 MXN. (Revisar salidas manuales).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                            <button onclick="handleAction('auth-5', 'Alerta marcada como revisada.')" class="bg-slate-800 text-white px-4 py-2 rounded font-bold hover:bg-slate-900 shadow transition-colors"><i class="fa-solid fa-eye mr-1"></i> Marcar como Revisado</button>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor para Notificaciones Flash (Toast) -->
+                    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2"></div>
+                </div>
+
+                <!-- SECCIÓN: INVENTARIO (Vista simulada) -->
+                <div id="panel-inventario" class="dashboard-panel hidden">
+                    <h2 class="text-2xl font-bold mb-6">Mi Inventario</h2>
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 border-b">
+                                    <th class="p-3">Producto</th>
+                                    <th class="p-3">Stock Actual</th>
+                                    <th class="p-3">Estado IA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b hover:bg-slate-50">
+                                    <td class="p-3 font-semibold">Tenis Deportivos Blancos</td>
+                                    <td class="p-3">4 u.</td>
+                                    <td class="p-3"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">Saludable</span></td>
+                                </tr>
+                                <tr class="border-b hover:bg-slate-50">
+                                    <td class="p-3 font-semibold">Gorras Negras</td>
+                                    <td class="p-3">2 u.</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Crítico (Por agotar)</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold">Fundas iPhone 11</td>
+                                    <td class="p-3">30 u.</td>
+                                    <td class="p-3"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs font-bold">Estancado (4 sem.)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Tarjeta de Validación 2: Proveedores -->
-                <div class="bg-white p-5 rounded-lg shadow mb-4 border-l-4 border-purple-500" id="auth-2">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded">Gestor de Proveedores</span>
-                            <h3 class="font-bold text-lg mt-2">Quiebre de Stock Previsto</h3>
-                            <p class="text-slate-600 text-sm mt-1">Se prevé que el artículo "Gorras Negras" se agote en 3 días. El Agente redactó una solicitud de cotización para Mayorista ABC.</p>
-                            <div class="mt-3 bg-slate-50 p-3 text-sm italic rounded border text-slate-500">
-                                "Estimado proveedor, solicito cotización actualizada para 50 unidades de..."
-                            </div>
+                <!-- SECCIÓN: MÉTRICAS (Vista simulada) -->
+                <div id="panel-metricas" class="dashboard-panel hidden">
+                    <h2 class="text-2xl font-bold mb-6">Métricas y Tendencias IA</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-lg shadow border border-slate-200">
+                            <h3 class="font-bold text-slate-700 mb-2">Agente Analista de Tendencias</h3>
+                            <p class="text-sm text-slate-600">Basado en consultas de clientes de esta semana, te sugerimos invertir en:</p>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li>📈 <strong>Cables tipo C de 2 metros</strong> (15 búsquedas sin stock)</li>
+                                <li>📈 <strong>Audífonos Diadema</strong> (Alta demanda local)</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="mt-4 flex space-x-3">
-                        <button onclick="document.getElementById('auth-2').style.display='none'" class="bg-purple-600 text-white px-4 py-2 rounded font-bold hover:bg-purple-700 shadow"><i class="fa-solid fa-paper-plane mr-1"></i> Aprobar envío de correo</button>
-                        <button onclick="document.getElementById('auth-2').style.display='none'" class="bg-white border border-slate-300 text-slate-600 px-4 py-2 rounded font-bold hover:bg-slate-50"><i class="fa-solid fa-pen mr-1"></i> Editar borrador</button>
+                        <div class="bg-white p-6 rounded-lg shadow border border-slate-200">
+                            <h3 class="font-bold text-slate-700 mb-2">Impacto de la IA (Mes Actual)</h3>
+                            <p class="text-sm text-slate-600">Tiempo ahorrado por Agentes AGENTIA:</p>
+                            <div class="text-3xl font-bold text-blue-600 mt-2">42 Horas</div>
+                            <p class="text-xs text-slate-500">Atención a clientes y cálculo de inventario.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -260,18 +420,96 @@
         </div>
     </div>
 
-    <!-- Script de Navegación Simple -->
+    <!-- SCRIPT DE LÓGICA -->
     <script>
+        // 1. Navegación Principal del Sitio
         function navigateTo(viewId) {
-            // Oculta todas las vistas
             const views = document.querySelectorAll('.view-section');
             views.forEach(view => {
                 view.classList.remove('active');
             });
-            // Muestra la vista seleccionada
             document.getElementById(viewId).classList.add('active');
-            // Hacer scroll arriba
             window.scrollTo(0, 0);
+        }
+
+        // 2. Navegación del Dashboard
+        function showDashboardSection(section) {
+            // Ocultar todos los paneles del dashboard
+            document.querySelectorAll('.dashboard-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            
+            // Mostrar el panel seleccionado
+            document.getElementById(`panel-${section}`).classList.remove('hidden');
+
+            // Resetear estilos del menú lateral
+            const navItems = ['autorizaciones', 'inventario', 'metricas'];
+            navItems.forEach(item => {
+                const navEl = document.getElementById(`nav-${item}`);
+                navEl.classList.remove('bg-blue-50', 'text-blue-700', 'font-bold');
+                navEl.classList.add('hover:bg-slate-50', 'text-slate-700');
+            });
+
+            // Aplicar estilo activo al menú seleccionado
+            const activeNav = document.getElementById(`nav-${section}`);
+            activeNav.classList.remove('hover:bg-slate-50', 'text-slate-700');
+            activeNav.classList.add('bg-blue-50', 'text-blue-700', 'font-bold');
+        }
+
+        // 3. Lógica para procesar las autorizaciones de la IA (Human-in-the-loop)
+        let pendingAuths = 5;
+
+        function handleAction(cardId, successMessage) {
+            const card = document.getElementById(cardId);
+            
+            // Animación de salida
+            card.classList.add('fade-out');
+            
+            // Mostrar notificación tipo Toast
+            showToast(successMessage);
+
+            // Eliminar tarjeta del DOM tras la animación y actualizar contador
+            setTimeout(() => {
+                card.style.display = 'none';
+                pendingAuths--;
+                updateCounters();
+            }, 300); // 300ms debe coincidir con la duración de fadeOut en CSS
+        }
+
+        function updateCounters() {
+            const badge = document.getElementById('badge-counter');
+            const menuText = document.getElementById('auth-counter-text');
+            const emptyState = document.getElementById('empty-state');
+
+            // Actualizar textos
+            badge.innerText = `${pendingAuths} pendientes`;
+            menuText.innerText = `Autorizaciones (${pendingAuths})`;
+
+            // Si llegamos a 0, mostrar estado vacío
+            if (pendingAuths === 0) {
+                badge.classList.remove('bg-blue-600');
+                badge.classList.add('bg-green-500');
+                badge.innerText = "Al día";
+                emptyState.classList.remove('hidden');
+            }
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            toast.className = 'bg-slate-800 text-white px-4 py-3 rounded shadow-lg text-sm flex items-center transition-opacity duration-300';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-green-400 mr-2"></i> ${message}`;
+            
+            container.appendChild(toast);
+
+            // Desaparecer notificación después de 3 segundos
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
         }
     </script>
 </body>
