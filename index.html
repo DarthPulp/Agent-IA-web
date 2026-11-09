@@ -87,6 +87,51 @@
             <p class="text-xl mb-8 max-w-2xl mx-auto font-light">Deja que nuestros agentes atiendan a tus clientes y gestionen tu bodega, mientras tú mantienes el control total con un solo clic.</p>
             <button onclick="navigateTo('planes')" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-slate-100 transition">Ver Planes y Precios</button>
         </div>
+
+        <!-- NUEVA SECCIÓN: Quiénes somos, Propuesta de Valor y A quiénes ayudamos -->
+        <div class="bg-white py-16 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Conoce más sobre AGENTIA</h2>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto font-light">Transformamos la manera en que gestionas tu negocio a través de Inteligencia Artificial segura y supervisada.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Quiénes somos -->
+                    <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100 hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿Quiénes somos?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Somos una empresa desarrolladora de <strong>soluciones de inteligencia artificial</strong> enfocadas en la gestión de inventarios y ventas. Nuestro modelo operativo se fundamenta en la arquitectura <em>Human-in-the-loop</em>, garantizando que el dueño siempre tenga la última palabra en decisiones que comprometen mercancía o dinero.
+                        </p>
+                    </div>
+
+                    <!-- Propuesta de Valor -->
+                    <div class="bg-purple-50/50 p-8 rounded-3xl border border-purple-100 hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Nuestra Propuesta de Valor</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Automatizamos tu logística, ventas y marketing para que <strong>la IA haga el trabajo pesado</strong> (cotizar con proveedores, redactar mensajes, cruzar datos y atender 24/7). Tú mantienes el rol de supervisor estratégico, ahorrando horas de administración, acelerando la rotación de bodega y evitando ventas perdidas.
+                        </p>
+                    </div>
+
+                    <!-- A quiénes ayudamos -->
+                    <div class="bg-green-50/50 p-8 rounded-3xl border border-green-100 hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">¿A quiénes ayudamos?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Diseñamos nuestras herramientas exclusivamente para <strong>PYMES y Emprendedores</strong>. Desde negocios que buscan resolver el cuello de botella en su atención digital por redes sociales, hasta empresas estructuradas con flujo constante que necesitan delegar su administración técnica integral.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- Vista Previa de Agentes (Simulador) -->
         <div class="max-w-5xl mx-auto py-16 px-4">
@@ -155,6 +200,226 @@
                     <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4">¿Qué incluye?</h4>
                     <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-700">
                         <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
+                            <div><strong>Todo lo del Plan Emprendedor.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Predictivo de Abastecimiento:</strong> Analiza el historial de ventas diarias y la estacionalidad para predecir cuándo se agotará un producto. Envía alertas y sugiere reordenar.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente de Resurtido y Lista de Espera:</strong> Anota a clientes en listas de espera por artículos agotados. Redacta y envía masivamente mensajes de aviso cuando la mercancía ingresa (requiere clic del dueño).
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Promotor de Inventario Estancado:</strong> Monitorea productos de baja rotación y genera ideas de promociones (combos, ventas flash) con textos persuasivos listos para publicar.
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-full hover:bg-blue-700 mt-auto shadow-md">Contratar</button>
+                </div>
+
+                <!-- Plan Corporativo -->
+                <div class="bg-white rounded-3xl shadow-md p-8 border border-gray-200 flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-gray-800">Plan Corporativo (Avanzado)</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$1,999 <span class="text-lg text-gray-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-gray-700 font-semibold mb-2">Automatización logística total.</p>
+                    <p class="text-sm text-gray-500 mb-6 font-light">El ecosistema completo. La IA hace el trabajo pesado de cruzar datos, cotizar y redactar. El dueño solo autoriza y supervisa estratégicamente.</p>
+                    
+                    <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4">¿Qué incluye?</h4>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
+                            <div><strong>Todo lo del Plan Negocio.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Gestor de Proveedores:</strong> Automatiza solicitudes de cotización a mayoristas. Formula un borrador, solicita aprobación, envía la solicitud y consolida las respuestas.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Detector de Mermas y Conciliación:</strong> Cruza diariamente las salidas del sistema con los ingresos registrados para detectar discrepancias y entrega un reporte matutino.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Analista de Tendencias Locales:</strong> Analiza patrones de compra y sugiere nuevos productos para futuros pedidos, fundamentando las decisiones de inversión.
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-50 text-blue-700 font-semibold py-3 rounded-full hover:bg-blue-100 mt-auto">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VISTA: LOGIN Y CHECKOUT -->
+    <div id="login" class="view-section py-16 px-4">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-200">
+            <div class="text-center mb-6">
+                <i class="fa-solid fa-robot text-blue-600 text-4xl mb-2"></i>
+                <h2 class="text-2xl font-bold text-gray-800">Accede a tu cuenta</h2>
+            </div>
+            <div class="space-y-5">
+                <div>
+                    <input type="email" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition" placeholder="Correo Electrónico">
+                </div>
+                <div>
+                    <input type="password" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition" placeholder="Contraseña">
+                </div>
+                <button onclick="navigateTo('dashboard')" class="w-full bg-blue-600 text-white font-medium py-3 rounded-full hover:bg-blue-700 shadow-sm">Continuar</button>
+                <div class="text-center text-sm text-gray-500 mt-4">¿No tienes cuenta? <a href="#" onclick="navigateTo('checkout')" class="text-blue-600 font-medium">Regístrate aquí</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vista oculta para "Checkout" -->
+    <div id="checkout" class="view-section py-16 px-4">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-200">
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Completar Suscripción</h2>
+   Conectado a tu WhatsApp e Instagram.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 bg-blue-100 p-1.5 rounded-full mr-3 text-xs"></i> Lee tu inventario en tiempo real.</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 bg-blue-100 p-1.5 rounded-full mr-3 text-xs"></i> Predice qué productos se van a agotar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. VISTA: PLANES Y PRECIOS -->
+    <div id="planes" class="view-section py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Elige el plan ideal para tu negocio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Plan Emprendedor -->
+                <div class="bg-white rounded-3xl shadow-md p-8 border border-gray-200 flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-gray-800">Plan Emprendedor (Básico)</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$499 <span class="text-lg text-gray-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-gray-700 font-semibold mb-2">Para arrancar y no perder mensajes.</p>
+                    <p class="text-sm text-gray-500 mb-6 font-light">Enfocado en resolver el cuello de botella de la atención digital y el catálogo. Atención rápida 24/7 sin perder el control de cobros y envíos.</p>
+                    
+                    <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4">¿Qué incluye?</h4>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Vendedor Omnicanal:</strong> Asistente conectado a WhatsApp/Instagram. Responde dudas, consulta el inventario en tiempo real y aparta mercancía con validación humana antes del cierre.
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-50 text-blue-700 font-semibold py-3 rounded-full hover:bg-blue-100 mt-auto">Contratar</button>
+                </div>
+
+                <!-- Plan Negocio -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-blue-600 relative transform md:-translate-y-4 flex flex-col h-full">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-2xl">MÁS POPULAR</div>
+                    <h3 class="text-xl font-bold text-gray-800">Plan Negocio (Intermedio)</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$999 <span class="text-lg text-gray-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-gray-700 font-semibold mb-2">Optimiza bodega y retén ventas.</p>
+                    <p class="text-sm text-gray-500 mb-6 font-light">Acelera la rotación del inventario y evita que el negocio se quede sin los productos más vendidos.</p>
+                    
+                    <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4">¿Qué incluye?</h4>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
+                            <div><strong>Todo lo del Plan Emprendedor.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Predictivo de Abastecimiento:</strong> Analiza el historial de ventas diarias y la estacionalidad para predecir cuándo se agotará un producto. Envía alertas y sugiere reordenar.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente de Resurtido y Lista de Espera:</strong> Anota a clientes en listas de espera por artículos agotados. Redacta y envía masivamente mensajes de aviso cuando la mercancía ingresa (requiere clic del dueño).
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-sparkles text-blue-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Promotor de Inventario Estancado:</strong> Monitorea productos de baja rotación y genera ideas de promociones (combos, ventas flash) con textos persuasivos listos para publicar.
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-full hover:bg-blue-700 mt-auto shadow-md">Contratar</button>
+                </div>
+
+                <!-- Plan Corporativo -->
+                <div class="bg-white rounded-3xl shadow-md p-8 border border-gray-200 flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-gray-800">Plan Corporativo (Avanzado)</h3>
+                    <p class="text-4xl font-bold text-blue-600 my-4">$1,999 <span class="text-lg text-gray-500 font-normal">MXN/mes</span></p>
+                    <p class="text-sm text-gray-700 font-semibold mb-2">Automatización logística total.</p>
+                    <p class="text-sm text-gray-500 mb-6 font-light">El ecosistema completo. La IA hace el trabajo pesado de cruzar datos, cotizar y redactar. El dueño solo autoriza y supervisa estratégicamente.</p>
+                    
+                    <h4 class="font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4">¿Qué incluye?</h4>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
+                            <div><strong>Todo lo del Plan Negocio.</strong></div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Gestor de Proveedores:</strong> Automatiza solicitudes de cotización a mayoristas. Formula un borrador, solicita aprobación, envía la solicitud y consolida las respuestas.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Detector de Mermas y Conciliación:</strong> Cruza diariamente las salidas del sistema con los ingresos registrados para detectar discrepancias y entrega un reporte matutino.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-robot text-purple-500 mt-1 mr-3"></i> 
+                            <div>
+                                <strong>Agente Analista de Tendencias Locales:</strong> Analiza patrones de compra y sugiere nuevos productos para futuros pedidos, fundamentando las decisiones de inversión.
+                            </div>
+                        </li>
+                    </ul>
+                    <button onclick="navigateTo('checkout')" class="w-full bg-blue-50 text-blue-700 font-semibold py-3 rounded-full hover:bg-blue-100 mt-auto">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. VISTA: LOGIN Y CHECKOUT -->
+    <div id="login" class="view-section py-16 px-4">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-200">
+            <div class="text-center mb-6">
+                <i class="fa-solid fa-robot text-blue-600 text-4xl mb-2"></i>
+                <h2 class="text-2xl font-bold text-gray-800">Accede a tu cuenta</h2>
+            </div>
+            <div class="space-y-5">
+                <div>
+                    <input type="email" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition" placeholder="Correo Electrónico">
+                </div>
+                <div>
+                    <input type="password" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition" placeholder="Contraseña">
+                </div>
+                <button onclick="navigateTo('dashboard')" class="w-full bg-blue-600 text-white font-medium py-3 rounded-full hover:bg-blue-700 shadow-sm">Continuar</button>
+                <div class="text-center text-sm text-gray-500 mt-4">¿No tienes cuenta? <a href="#" onclick="navigateTo('checkout')" class="text-blue-600 font-medium">Regístrate aquí</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vista oculta para "Checkout" -->
+    <div id="checkout" class="view-section py-16 px-4">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-200">
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Completar Suscripción</h2>
+  art">
                             <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> 
                             <div><strong>Todo lo del Plan Emprendedor.</strong></div>
                         </li>
